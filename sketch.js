@@ -38,7 +38,7 @@ function setup() {
   weatherCondition = Math.floor(random(3)); 
   
   previousCondition = weatherCondition; 
-  setInterval(setup, 60000); 
+  setInterval(setup, 15000); 
   
     
   // 새 날씨 조건에 따라 초기화
