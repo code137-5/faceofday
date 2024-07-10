@@ -568,12 +568,12 @@ class WindParticle {
     this.pos = createVector(x, y);
     this.vel = createVector(random(2, 5), 0); // 속도 설정
     this.trail = []; // 트레일을 저장할 배열
-    this.maxTrail = int(random(30, 100)); // 트레일 길이를 랜덤하게 설정
+    this.maxTrail = int(random(30, 100));
     this.angle = 0; // 초기 각도
-    this.initialColor = color(173, 216, 230, 255); // 초기 색상 (연한 파랑색)
-    this.color = this.initialColor; // 현재 색상
+    this.initialColor = color(173, 216, 230, 255); //초기색상
+    this.color = this.initialColor; 
     this.hasCollided = false; // 충돌 여부 플래그
-    this.size = random(2, 8); // 파티클 크기
+    this.size = random(2, 8); 
   }
 
   update() {
@@ -603,7 +603,7 @@ class WindParticle {
     for (let particle of particles) {
       let d = dist(this.pos.x, this.pos.y, particle.pos.x, particle.pos.y);
       if (d < 5) { // 충돌 감지 범위
-        this.color = color(255, random(150, 200), random(150, 200), 150); // 충돌 시 색상 변경 (부드러운 파스텔 톤)
+        this.color = color(255, random(150, 200), random(150, 200), 150); // 충돌 시 색상 변경 
         this.hasCollided = false; // 충돌 상태 플래그 설정
         particle.applyForce(this.vel.copy().mult(0.25)); // 시계 파티클에 힘 가하기
       }
